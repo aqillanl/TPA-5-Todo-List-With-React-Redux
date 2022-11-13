@@ -1,38 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Signika+Negative&display=swap");
+
+html {
+  line-height: 1.15;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Signika Negative", sans-serif;
+}
+
+body {
+  background: #fefbf6;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .App {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.App h1 {
+  display: inline;
   text-align: center;
+  margin-bottom: 0.5rem;
+  color: #3a3845;
+  font-size: 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h4 {
+  display: inline;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #815b5b;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.addTodos {
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-input {
+  min-width: 15rem;
+  width: 30vw;
+  max-height: 2.5rem;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  align-self: center;
+}
+
+.todo-input:focus {
+  outline: none;
+  border: 2px solid #cc9544;
+}
+
+.add-btn {
+  padding: 2px 30px;
+  margin-left: 0.5rem;
+  background-color: #603601;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  border: 2px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-btn:hover {
+  background-color: grey;
+  box-shadow: 2px 4px 10px #cc9544;
+}
+
+.add-btn:focus {
+  outline: none;
+}
+
+.displaytodos {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: auto auto auto;
 }
 
-.App-link {
-  color: #61dafb;
+.displaytodos .buttons {
+  margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.displaytodos .buttons button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.displaytodos .buttons button:focus {
+  outline: none;
+}
+
+.displaytodos .buttons button:hover {
+  background-color: #cc9544;
+  box-shadow: 2px 4px 10px #1c0a00;
+}
+
+.displaytodos .buttons button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.displaytodos ul {
+  list-style: none;
+  align-self: center;
+  margin-bottom: 10%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ffefd6;
+  margin: 0 1rem 1rem 0;
+  height: 8rem;
+  width: 20rem;
+  border-radius: 1rem;
+  position: relative;
+  padding: 1rem;
+}
+
+.card textarea {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #f7f7f7;
+  color: black;
+  height: 80%;
+  font-size: medium;
+}
+
+.card .btns {
+  position: absolute;
+  bottom: 0.1rem;
+  right: 5.5rem;
+}
+
+.card .btns button {
+  border-radius: 20%;
+  border: none;
+  margin: 0 0.6rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+}
+
+.completed {
+  font-size: xx-large;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  color: green;
+}
+
+@media Screen and (max-width: 640px) {
+  .displaytodos {
+    margin-top: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .displaytodos ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    align-self: center;
+  }
+  .card {
+    margin-right: 0;
   }
 }
